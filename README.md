@@ -27,7 +27,7 @@ The `fabric` object contains everything needed to render and align the pattern:
 
 ## Threads
 
-Each thread defines how it will look and behave:
+Array of threads. Each thread defines how it will look and behave:
 
 - **`name`**: Label or code (e.g. DMC thread code).
 - **`color`**: Hex or named color (e.g. "#ff0000").
@@ -37,7 +37,7 @@ Each thread defines how it will look and behave:
 
 ## Stitches
 
-Each `stitch` contains:
+Array of stitches. Each `stitch` contains:
 
 - **`thread.index`**: Index into the [threads array](#Threads) to define which thread is used.
 - **`path.dotsX` and `path.dotsY`**: A sequence of X and Y coordinates, forming the thread path. Coordinates must be aligned by index (i.e. first X and Y form one point, second X and Y form the next, etc.)
