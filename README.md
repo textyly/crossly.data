@@ -1,6 +1,6 @@
 # Crossly Data Model
 
-This model defines the structure of a **Crossly pattern**, which encodes embroidery designs using **logical paths**, **threads**, and a **fabric canvas**. Instead of relying on graphics or SVG, this model focuses on *semantic description* of the stitch process, making it ideal for analysis, editing, and AI-driven tools.
+This model defines the structure of a **Crossly pattern**, which encodes embroidery designs and techniques using **logical paths**, **threads**, and a **fabric canvas**. Instead of relying on graphics or SVG, this model focuses on *semantic description* of the stitch process, making it ideal for analysis, editing, and AI-driven tools.
 
 ## Top-Level Properties
 
