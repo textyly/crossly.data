@@ -1,11 +1,11 @@
-# Crossly JSON Data Model
+# Crossly Data Model
 
-This JSON schema defines the structure of a **Crossly pattern**, which encodes embroidery designs using **logical paths**, **threads**, and a **fabric grid**. Instead of relying on graphics or SVG, this model focuses on *semantic description* of the stitch process, making it ideal for analysis, editing, and AI-driven tools.
+This model defines the structure of a **Crossly pattern**, which encodes embroidery designs using **logical paths**, **threads**, and a **fabric canvas**. Instead of relying on graphics or SVG, this model focuses on *semantic description* of the stitch process, making it ideal for analysis, editing, and AI-driven tools.
 
 ## Top-Level Properties
 
 - **`name`**: Name of the embroidery pattern.
-- **`fabric`**: Defines the grid, appearance, and fabric details used as a stitching base.
+- **`fabric`**: Defines the canvas, appearance, and fabric details used as a stitching base.
 - **`threads`**: A palette of threads, each with a name, color, and width.
 - **`stitches`**: A list of individual stitch instructions using paths of dots and threads.
 
@@ -16,12 +16,12 @@ This JSON schema defines the structure of a **Crossly pattern**, which encodes e
 The `fabric` object contains everything needed to render and align the pattern:
 
 - **`name`**: User-friendly name (e.g. "Aida 14").
-- **`columns` / `rows`**: Dimensions of the fabric grid.
+- **`columns` / `rows`**: Dimensions of the fabric canvas.
 - **`color`**: Background color of the fabric.
-- **`dots`**: Visual aid showing grid points (used in UIs).
+- **`dots`**: Visual aid showing canvas points (used in UIs).
   - `color`, `radius`, `space`: Control appearance and spacing.
-  - `hidden.enabled`: Optionally hide dots from display.
-- **`threads`**: Optional lines shown between stitches to simulate fabric weave.
+  - `hidden.enabled`: Optionally show hidden dots.
+- **`threads`**: Lines shown between stitches to simulate fabric weave.
 
 ---
 
@@ -39,10 +39,10 @@ Each thread defines how it will look and behave:
 
 Each `stitch` contains:
 
-- **`thread.threadIndex`**: Index into the threads array to define which thread is used.
+- **`thread.index`**: Index into the threads array !!! to define which thread is used.
 - **`path.dotsX` and `path.dotsY`**: A sequence of X and Y coordinates, forming the thread path. Coordinates must be aligned by index (i.e. first X and Y form one point, second X and Y form the next, etc.)
 
-This path-based approach makes it possible to represent any kind of stitch (cross stitch, backstitch, satin, freeform) by controlling the needle path.
+This path-based approach makes it possible to represent any kind of stitch (cross stitch, half stitch, backstitch and so forth) by controlling the needle path.
 
 ---
 

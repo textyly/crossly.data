@@ -81,7 +81,7 @@
                             "minLength": 1
                         },
                         "width": {
-                            "description": "Width of the default thread lines in the grid.",
+                            "description": "Width of the default thread lines in the canvas.",
                             "type": "number",
                             "minimum": 0
                         }
