@@ -1,0 +1,198 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Crossly Pattern",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the embroidery pattern.",
+            "type": "string"
+        },
+        "fabric": {
+            "description": "Describes the fabric canvas and visual characteristics.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The display name of the fabric type (e.g. 'Aida 14 count').",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "columns": {
+                    "description": "Number of columns (width) in the canvas of the fabric.",
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "rows": {
+                    "description": "Number of rows (height) in the canvas of the fabric.",
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "color": {
+                    "description": "Background color of the fabric (usually a light color).",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "dots": {
+                    "description": "Settings for canvas dots, which help users align stitches.",
+                    "type": "object",
+                    "properties": {
+                        "color": {
+                            "description": "Color of the fabric canvas dots.",
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "radius": {
+                            "description": "Radius of the dots in logical drawing units.",
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "space": {
+                            "description": "Spacing between adjacent canvas dots in logical drawing units.",
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "hidden": {
+                            "description": "Controls hidden dots settings.",
+                            "type": "object",
+                            "properties": {
+                                "enabled": {
+                                    "description": "If true, hidden dots are enabled.",
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "enabled"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "color",
+                        "radius",
+                        "space",
+                        "hidden"
+                    ]
+                },
+                "threads": {
+                    "description": "Default thread appearance for overlay canvas lines (not stitch threads).",
+                    "type": "object",
+                    "properties": {
+                        "color": {
+                            "description": "Color of the default threads in the canvas (for UI overlay).",
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "width": {
+                            "description": "Width of the default thread lines in the canvas.",
+                            "type": "number",
+                            "minimum": 0
+                        }
+                    },
+                    "required": [
+                        "color",
+                        "width"
+                    ]
+                }
+            },
+            "required": [
+                "name",
+                "color",
+                "columns",
+                "rows",
+                "dots",
+                "threads"
+            ]
+        },
+        "threads": {
+            "description": "List of stitch threads used in the design, defining visual and physical properties.",
+            "type": "array",
+            "items": {
+                "description": "Single thread definition (e.g. red DMC 321).",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name or code of the thread (e.g. 'DMC 321').",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "color": {
+                        "description": "Hex code or named color of the thread.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "width": {
+                        "description": "Thickness of the thread in logical drawing units.",
+                        "type": "integer",
+                        "minimum": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "color",
+                    "width"
+                ],
+                "minItems": 1
+            }
+        },
+        "stitches": {
+            "description": "List of stitches, each consisting of a thread and a path (sequence of points).",
+            "type": "array",
+            "items": {
+                "description": "Single stitch instance using one thread and a path of dots.",
+                "type": "object",
+                "properties": {
+                    "thread": {
+                        "description": "Thread reference used in this stitch (by index into the threads array).",
+                        "type": "object",
+                        "properties": {
+                            "index": {
+                                "description": "Index of the thread from the pattern's threads array.",
+                                "type": "integer",
+                                "minimum": 0
+                            }
+                        },
+                        "required": [
+                            "index"
+                        ]
+                    },
+                    "path": {
+                        "description": "The actual stitch path — a sequence of (x, y) points through canvas dots.",
+                        "type": "object",
+                        "properties": {
+                            "dotsX": {
+                                "description": "List of X-coordinates for the stitch path.",
+                                "type": "array",
+                                "items": {
+                                    "description": "X-coordinate for a stitch point.",
+                                    "type": "number",
+                                    "minimum": 0
+                                }
+                            },
+                            "dotsY": {
+                                "description": "List of Y-coordinates for the stitch path.",
+                                "type": "array",
+                                "items": {
+                                    "description": "Y-coordinate for a stitch point.",
+                                    "type": "number",
+                                    "minimum": 0
+                                }
+                            }
+                        },
+                        "required": [
+                            "dotsX",
+                            "dotsY"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "thread"
+            ],
+            "minItems": 0
+        }
+    },
+    "required": [
+        "name",
+        "fabric",
+        "threads",
+        "stitches"
+    ]
+}
