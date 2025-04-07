@@ -39,7 +39,7 @@ Each thread defines how it will look and behave:
 
 Each `stitch` contains:
 
-- **`thread.index`**: Index into the threads array [threads](#Threads) to define which thread is used.
+- **`thread.index`**: Index into the [threads array](#Threads) to define which thread is used.
 - **`path.dotsX` and `path.dotsY`**: A sequence of X and Y coordinates, forming the thread path. Coordinates must be aligned by index (i.e. first X and Y form one point, second X and Y form the next, etc.)
 
 This path-based approach makes it possible to represent any kind of stitch (cross stitch, half stitch, backstitch and so forth) by controlling the needle path.
