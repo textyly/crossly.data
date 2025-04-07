@@ -1,0 +1,53 @@
+{
+    "name": "Simple Cross Stitch",
+    "fabric": {
+        "name": "Aida 14",
+        "columns": 10,
+        "rows": 10,
+        "color": "#fff8dc",
+        "dots": {
+            "color": "#9fa19f",
+            "radius": 1.4,
+            "space": 24,
+            "hidden": {
+                "enabled": true
+            }
+        },
+        "threads": {
+            "color": "#d2d4d2",
+            "width": 1.4
+        }
+    },
+    "threads": [
+        {
+            "name": "Red Thread",
+            "color": "red",
+            "width": 12
+        },
+        {
+            "name": "Blue Thread",
+            "color": "blue",
+            "width": 10
+        }
+    ],
+    "stitches": [
+        {
+            "thread": {
+                "index": 0
+            },
+            "path": {
+                "dotsX": [ 2, 3, 4 ],
+                "dotsY": [ 2, 2, 2 ]
+            }
+        },
+        {
+            "thread": {
+                "index": 1
+            },
+            "path": {
+                "dotsX": [ 5, 6, 7 ],
+                "dotsY": [ 3, 3, 3 ]
+            }
+        }
+    ]
+}
