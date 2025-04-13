@@ -18,36 +18,56 @@
             "width": 1.4
         }
     },
-    "threads": [
-        {
-            "name": "Red Thread",
-            "color": "red",
-            "width": 12
-        },
-        {
-            "name": "Blue Thread",
-            "color": "blue",
-            "width": 10
-        }
-    ],
     "stitches": [
         {
             "thread": {
-                "index": 0
+                "name": "Red Thread",
+                "color": "red",
+                "width": 12
             },
-            "path": {
-                "dotsX": [ 2, 4, 4, 2 ],
-                "dotsY": [ 2, 4, 2, 4 ]
-            }
+            "path": [
+                {
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "x": 4,
+                    "y": 4
+                },
+                {
+                    "x": 4,
+                    "y": 2
+                },
+                {
+                    "x": 2,
+                    "y": 4
+                }
+            ]
         },
         {
             "thread": {
-                "index": 1
+                "name": "Blue Thread",
+                "color": "blue",
+                "width": 10
             },
-            "path": {
-                "dotsX": [ 6, 4, 6, 4 ],
-                "dotsY": [ 2, 4, 4, 2 ]
-            }
+            "path": [
+                {
+                    "x": 6,
+                    "y": 2
+                },
+                {
+                    "x": 4,
+                    "y": 4
+                },
+                {
+                    "x": 6,
+                    "y": 4
+                },
+                {
+                    "x": 4,
+                    "y": 3
+                }
+            ]
         }
     ]
 }

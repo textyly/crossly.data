@@ -101,90 +101,67 @@
                 "threads"
             ]
         },
-        "threads": {
-            "description": "List of stitch threads used in the design, defining visual and physical properties.",
-            "type": "array",
-            "items": {
-                "description": "Single thread definition (e.g. red DMC 321).",
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "description": "The name or code of the thread (e.g. 'DMC 321').",
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "color": {
-                        "description": "Hex code or named color of the thread.",
-                        "type": "string",
-                        "minLength": 1
-                    },
-                    "width": {
-                        "description": "Thickness of the thread in logical drawing units.",
-                        "type": "integer",
-                        "minimum": 1
-                    }
-                },
-                "required": [
-                    "name",
-                    "color",
-                    "width"
-                ],
-                "minItems": 1
-            }
-        },
         "stitches": {
-            "description": "List of stitches, each consisting of a thread and a path (sequence of points).",
+            "description": "TBD",
             "type": "array",
             "items": {
-                "description": "Single stitch instance using one thread and a path of dots.",
+                "description": "TBD",
                 "type": "object",
                 "properties": {
                     "thread": {
-                        "description": "Thread reference used in this stitch (by index into the threads array).",
+                        "description": "Single thread definition (e.g. red DMC 321).",
                         "type": "object",
                         "properties": {
-                            "index": {
-                                "description": "Index of the thread from the pattern's threads array.",
+                            "name": {
+                                "description": "The name or code of the thread (e.g. 'DMC 321').",
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "color": {
+                                "description": "Hex code or named color of the thread.",
+                                "type": "string",
+                                "minLength": 1
+                            },
+                            "width": {
+                                "description": "Thickness of the thread in logical drawing units.",
                                 "type": "integer",
-                                "minimum": 0
+                                "minimum": 1
                             }
                         },
                         "required": [
-                            "index"
-                        ]
+                            "name",
+                            "color",
+                            "width"
+                        ],
+                        "minItems": 1
                     },
                     "path": {
-                        "description": "The actual stitch path — a sequence of (x, y) points through canvas dots.",
-                        "type": "object",
-                        "properties": {
-                            "dotsX": {
-                                "description": "List of X-coordinates for the stitch path.",
-                                "type": "array",
-                                "items": {
-                                    "description": "X-coordinate for a stitch point.",
-                                    "type": "number",
-                                    "minimum": 0
-                                }
-                            },
-                            "dotsY": {
-                                "description": "List of Y-coordinates for the stitch path.",
-                                "type": "array",
-                                "items": {
-                                    "description": "Y-coordinate for a stitch point.",
-                                    "type": "number",
-                                    "minimum": 0
+                        "description": "TBD",
+                        "type": "array",
+                        "items": {
+                            "description": "Single stitch instance using one thread and a path of dots.",
+                            "type": "object",
+                            "properties": {
+                                "x": {
+                                    "description": "Index of the thread from the pattern's threads array.",
+                                    "type": "integer"
+                                },
+                                "y": {
+                                    "description": "Index of the thread from the pattern's threads array.",
+                                    "type": "integer"
                                 }
                             }
                         },
                         "required": [
-                            "dotsX",
-                            "dotsY"
+                            "x",
+                            "y"
                         ]
                     }
                 }
             },
             "required": [
-                "thread"
+                "thread",
+                "path"
             ],
             "minItems": 0
         }
@@ -192,7 +169,6 @@
     "required": [
         "name",
         "fabric",
-        "threads",
         "stitches"
     ]
 }
