@@ -33,7 +33,7 @@
     "pattern": [
         {
             "threadIndex": 0,
-            "path": [
+            "needlePath": [
                 {
                     "x": 2,
                     "y": 2
@@ -54,7 +54,7 @@
         },
         {
             "threadIndex": 1,
-            "path": [
+            "needlePath": [
                 {
                     "x": 6,
                     "y": 2

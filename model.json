@@ -140,11 +140,11 @@
                 "type": "object",
                 "properties": {
                     "threadIndex": {
-                        "description": "Index of the thread in the top-level 'threads' array.",
+                        "description": "Index (zero-based) of the thread in the top-level 'threads' array.",
                         "type": "integer",
                         "minimum": 0
                     },
-                    "path": {
+                    "needlePath": {
                         "description": "A sequence of dot positions through which the needle passes. The order represents the stitching direction.",
                         "type": "array",
                         "items": {
@@ -164,12 +164,13 @@
                                 "x",
                                 "y"
                             ]
-                        }
+                        },
+                        "minItems": 2
                     }
                 },
                 "required": [
                     "threadIndex",
-                    "path"
+                    "needlePath"
                 ]
             },
             "minItems": 0
