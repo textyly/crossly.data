@@ -101,74 +101,84 @@
                 "threads"
             ]
         },
-        "stitches": {
-            "description": "TBD",
+        "threads": {
+            "description": "All thread definitions used across stitches (shared).",
             "type": "array",
             "items": {
-                "description": "TBD",
+                "type": "object",
+                "description": "Single thread definition (e.g. DMC 321, red, width 1).",
+                "properties": {
+                    "name": {
+                        "description": "The name or code of the thread (e.g. 'DMC 321').",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "color": {
+                        "description": "Hex code or named color of the thread.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "width": {
+                        "description": "Thickness of the thread in logical drawing units.",
+                        "type": "integer",
+                        "minimum": 1
+                    }
+                },
+                "required": [
+                    "name",
+                    "color",
+                    "width"
+                ]
+            },
+            "minItems": 1
+        },
+        "pattern": {
+            "description": "List of stitched paths in the design. Each uses a thread from the top-level 'threads' array.",
+            "type": "array",
+            "items": {
+                "description": "A thread reference and a user-defined path through fabric dots, representing one part of the overall design.",
                 "type": "object",
                 "properties": {
-                    "thread": {
-                        "description": "Single thread definition (e.g. red DMC 321).",
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "description": "The name or code of the thread (e.g. 'DMC 321').",
-                                "type": "string",
-                                "minLength": 1
-                            },
-                            "color": {
-                                "description": "Hex code or named color of the thread.",
-                                "type": "string",
-                                "minLength": 1
-                            },
-                            "width": {
-                                "description": "Thickness of the thread in logical drawing units.",
-                                "type": "integer",
-                                "minimum": 1
-                            }
-                        },
-                        "required": [
-                            "name",
-                            "color",
-                            "width"
-                        ],
-                        "minItems": 1
+                    "threadIndex": {
+                        "description": "Index of the thread in the top-level 'threads' array.",
+                        "type": "integer",
+                        "minimum": 0
                     },
                     "path": {
-                        "description": "TBD",
+                        "description": "A sequence of dot positions through which the needle passes. The order represents the stitching direction.",
                         "type": "array",
                         "items": {
-                            "description": "Single stitch instance using one thread and a path of dots.",
+                            "description": "Single dot coordinate on the fabric grid.",
                             "type": "object",
                             "properties": {
                                 "x": {
-                                    "description": "Index of the thread from the pattern's threads array.",
+                                    "description": "Horizontal (column) index on the fabric grid.",
                                     "type": "integer"
                                 },
                                 "y": {
-                                    "description": "Index of the thread from the pattern's threads array.",
+                                    "description": "Vertical (row) index on the fabric grid.",
                                     "type": "integer"
                                 }
-                            }
-                        },
-                        "required": [
-                            "x",
-                            "y"
-                        ]
+                            },
+                            "required": [
+                                "x",
+                                "y"
+                            ]
+                        }
                     }
-                }
+                },
+                "required": [
+                    "threadIndex",
+                    "path"
+                ]
             },
-            "required": [
-                "thread",
-                "path"
-            ],
             "minItems": 0
         }
     },
     "required": [
         "name",
         "fabric",
-        "stitches"
+        "threads",
+        "pattern"
     ]
 }
