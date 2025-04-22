@@ -102,11 +102,11 @@
             ]
         },
         "threads": {
-            "description": "List of stitch threads used in the design, defining visual and physical properties.",
+            "description": "All thread definitions used across stitches (shared).",
             "type": "array",
             "items": {
-                "description": "Single thread definition (e.g. red DMC 321).",
                 "type": "object",
+                "description": "Single thread definition (e.g. DMC 321, red, width 1).",
                 "properties": {
                     "name": {
                         "description": "The name or code of the thread (e.g. 'DMC 321').",
@@ -128,64 +128,51 @@
                     "name",
                     "color",
                     "width"
-                ],
-                "minItems": 1
-            }
+                ]
+            },
+            "minItems": 1
         },
-        "stitches": {
-            "description": "List of stitches, each consisting of a thread and a path (sequence of points).",
+        "pattern": {
+            "description": "List of stitched paths in the design. Each uses a thread from the top-level 'threads' array.",
             "type": "array",
             "items": {
-                "description": "Single stitch instance using one thread and a path of dots.",
+                "description": "A thread reference and a user-defined path through fabric dots, representing one part of the overall design.",
                 "type": "object",
                 "properties": {
-                    "thread": {
-                        "description": "Thread reference used in this stitch (by index into the threads array).",
-                        "type": "object",
-                        "properties": {
-                            "index": {
-                                "description": "Index of the thread from the pattern's threads array.",
-                                "type": "integer",
-                                "minimum": 0
-                            }
-                        },
-                        "required": [
-                            "index"
-                        ]
+                    "threadIndex": {
+                        "description": "Index (zero-based) of the thread in the top-level 'threads' array.",
+                        "type": "integer",
+                        "minimum": 0
                     },
-                    "path": {
-                        "description": "The actual stitch path — a sequence of (x, y) points through canvas dots.",
-                        "type": "object",
-                        "properties": {
-                            "dotsX": {
-                                "description": "List of X-coordinates for the stitch path.",
-                                "type": "array",
-                                "items": {
-                                    "description": "X-coordinate for a stitch point.",
-                                    "type": "number",
-                                    "minimum": 0
+                    "needlePath": {
+                        "description": "A sequence of dot positions through which the needle passes. The order represents the stitching direction.",
+                        "type": "array",
+                        "items": {
+                            "description": "Single dot coordinate on the fabric grid.",
+                            "type": "object",
+                            "properties": {
+                                "x": {
+                                    "description": "Horizontal (column) index on the fabric grid.",
+                                    "type": "integer"
+                                },
+                                "y": {
+                                    "description": "Vertical (row) index on the fabric grid.",
+                                    "type": "integer"
                                 }
                             },
-                            "dotsY": {
-                                "description": "List of Y-coordinates for the stitch path.",
-                                "type": "array",
-                                "items": {
-                                    "description": "Y-coordinate for a stitch point.",
-                                    "type": "number",
-                                    "minimum": 0
-                                }
-                            }
+                            "required": [
+                                "x",
+                                "y"
+                            ]
                         },
-                        "required": [
-                            "dotsX",
-                            "dotsY"
-                        ]
+                        "minItems": 2
                     }
-                }
+                },
+                "required": [
+                    "threadIndex",
+                    "needlePath"
+                ]
             },
-            "required": [
-                "thread"
-            ],
             "minItems": 0
         }
     },
@@ -193,6 +180,6 @@
         "name",
         "fabric",
         "threads",
-        "stitches"
+        "pattern"
     ]
 }

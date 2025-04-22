@@ -20,34 +20,58 @@
     },
     "threads": [
         {
-            "name": "Red Thread",
-            "color": "red",
-            "width": 12
+            "name": "DMC 321",
+            "color": "#C00000",
+            "width": 14
         },
         {
-            "name": "Blue Thread",
-            "color": "blue",
-            "width": 10
+            "name": "DMC 310",
+            "color": "#000000",
+            "width": 12
         }
     ],
-    "stitches": [
+    "pattern": [
         {
-            "thread": {
-                "index": 0
-            },
-            "path": {
-                "dotsX": [ 2, 4, 4, 2 ],
-                "dotsY": [ 2, 4, 2, 4 ]
-            }
+            "threadIndex": 0,
+            "needlePath": [
+                {
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "x": 4,
+                    "y": 4
+                },
+                {
+                    "x": 4,
+                    "y": 2
+                },
+                {
+                    "x": 2,
+                    "y": 4
+                }
+            ]
         },
         {
-            "thread": {
-                "index": 1
-            },
-            "path": {
-                "dotsX": [ 6, 4, 6, 4 ],
-                "dotsY": [ 2, 4, 4, 2 ]
-            }
+            "threadIndex": 1,
+            "needlePath": [
+                {
+                    "x": 6,
+                    "y": 2
+                },
+                {
+                    "x": 4,
+                    "y": 4
+                },
+                {
+                    "x": 6,
+                    "y": 4
+                },
+                {
+                    "x": 4,
+                    "y": 2
+                }
+            ]
         }
     ]
 }
