@@ -22,12 +22,12 @@
         {
             "name": "DMC 321",
             "color": "#C00000",
-            "width": 1
+            "width": 14
         },
         {
             "name": "DMC 310",
             "color": "#000000",
-            "width": 1
+            "width": 12
         }
     ],
     "pattern": [
