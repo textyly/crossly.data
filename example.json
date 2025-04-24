@@ -7,15 +7,12 @@
         "color": "#fff8dc",
         "dots": {
             "color": "#9fa19f",
-            "radius": 1.4,
-            "space": 24,
             "hidden": {
                 "enabled": true
             }
         },
         "threads": {
-            "color": "#d2d4d2",
-            "width": 1.4
+            "color": "#d2d4d2"
         }
     },
     "threads": [
