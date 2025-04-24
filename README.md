@@ -29,8 +29,8 @@ Describes the canvas/grid on which stitching occurs.
 | `columns`    | Number of columns in the logical grid. |
 | `rows`       | Number of rows in the logical grid. |
 | `color`      | Background color of the fabric. |
-| `dots`       | Appearance and spacing of alignment dots on the logical grid. |
-| `threads`    | Color and width of the optional overlay lines for grid guidance (not the stitch threads). |
+| `dots`       | Appearance of dots on the logical grid. |
+| `threads`    | Color of the optional overlay lines for grid guidance (not the stitch threads). |
 
 ---
 

@@ -40,16 +40,6 @@
                             "type": "string",
                             "minLength": 1
                         },
-                        "radius": {
-                            "description": "Radius of the dots in logical drawing units.",
-                            "type": "number",
-                            "minimum": 0
-                        },
-                        "space": {
-                            "description": "Spacing between adjacent canvas dots in logical drawing units.",
-                            "type": "integer",
-                            "minimum": 1
-                        },
                         "hidden": {
                             "description": "Controls hidden dots settings.",
                             "type": "object",
@@ -66,8 +56,6 @@
                     },
                     "required": [
                         "color",
-                        "radius",
-                        "space",
                         "hidden"
                     ]
                 },
@@ -79,16 +67,10 @@
                             "description": "Color of the default threads in the canvas (for UI overlay).",
                             "type": "string",
                             "minLength": 1
-                        },
-                        "width": {
-                            "description": "Width of the default thread lines in the canvas.",
-                            "type": "number",
-                            "minimum": 0
                         }
                     },
                     "required": [
-                        "color",
-                        "width"
+                        "color"
                     ]
                 }
             },
