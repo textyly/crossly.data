@@ -33,45 +33,17 @@
     "pattern": [
         {
             "threadIndex": 0,
-            "needlePath": [
-                {
-                    "x": 2,
-                    "y": 2
-                },
-                {
-                    "x": 4,
-                    "y": 4
-                },
-                {
-                    "x": 4,
-                    "y": 2
-                },
-                {
-                    "x": 2,
-                    "y": 4
-                }
-            ]
+            "needlePath": {
+                "indexesX": [ 2, 4, 4, 2],
+                "indexesY": [ 2, 4, 2, 2]
+            }
         },
         {
             "threadIndex": 1,
-            "needlePath": [
-                {
-                    "x": 6,
-                    "y": 2
-                },
-                {
-                    "x": 4,
-                    "y": 4
-                },
-                {
-                    "x": 6,
-                    "y": 4
-                },
-                {
-                    "x": 4,
-                    "y": 2
-                }
-            ]
+            "needlePath": {
+                "indexesX": [ 6, 4, 6, 2],
+                "indexesY": [ 2, 4, 4, 2]
+            }
         }
     ]
 }

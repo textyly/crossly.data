@@ -146,26 +146,31 @@
                     },
                     "needlePath": {
                         "description": "A sequence of dot positions through which the needle passes. The order represents the stitching direction.",
-                        "type": "array",
-                        "items": {
-                            "description": "Single dot coordinate on the fabric grid.",
-                            "type": "object",
-                            "properties": {
-                                "x": {
-                                    "description": "Horizontal (column) index on the fabric grid.",
-                                    "type": "integer"
-                                },
-                                "y": {
-                                    "description": "Vertical (row) index on the fabric grid.",
-                                    "type": "integer"
+                        "type": "object",
+                        "properties": {
+                            "indexesX": {
+                                "description": "Column indexes of grid dots visited by the needle in order. Each index refers to a vertical position on the logical fabric grid.",
+                                "type": "array",
+                                "items": {
+                                    "description": "Zero-based column index of a fabric grid dot.",
+                                    "type": "number",
+                                    "minimum": 0
                                 }
                             },
-                            "required": [
-                                "x",
-                                "y"
-                            ]
+                            "indexesY": {
+                                "description": "Row indexes of grid dots visited by the needle in order. Each index refers to a horizontal position on the logical fabric grid.",
+                                "type": "array",
+                                "items": {
+                                    "description": "Zero-based row index of a fabric grid dot.",
+                                    "type": "number",
+                                    "minimum": 0
+                                }
+                            }
                         },
-                        "minItems": 2
+                        "required": [
+                            "indexesX",
+                            "indexesY"
+                        ]
                     }
                 },
                 "required": [
