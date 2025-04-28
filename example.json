@@ -6,10 +6,7 @@
         "rows": 10,
         "color": "#fff8dc",
         "dots": {
-            "color": "#9fa19f",
-            "hidden": {
-                "enabled": true
-            }
+            "color": "#9fa19f"
         },
         "threads": {
             "color": "#d2d4d2"
@@ -31,15 +28,15 @@
         {
             "threadIndex": 0,
             "needlePath": {
-                "indexesX": [ 2, 4, 4, 2],
-                "indexesY": [ 2, 4, 2, 2]
+                "indexesX": [ 2, 4, 4, 2 ],
+                "indexesY": [ 2, 4, 2, 2 ]
             }
         },
         {
             "threadIndex": 1,
             "needlePath": {
-                "indexesX": [ 6, 4, 6, 2],
-                "indexesY": [ 2, 4, 4, 2]
+                "indexesX": [ 6, 4, 6, 2 ],
+                "indexesY": [ 2, 4, 4, 2 ]
             }
         }
     ]
