@@ -39,24 +39,10 @@
                             "description": "Color of the fabric canvas dots.",
                             "type": "string",
                             "minLength": 1
-                        },
-                        "hidden": {
-                            "description": "Controls hidden dots settings.",
-                            "type": "object",
-                            "properties": {
-                                "enabled": {
-                                    "description": "If true, hidden dots are enabled.",
-                                    "type": "boolean"
-                                }
-                            },
-                            "required": [
-                                "enabled"
-                            ]
                         }
                     },
                     "required": [
-                        "color",
-                        "hidden"
+                        "color"
                     ]
                 },
                 "threads": {
