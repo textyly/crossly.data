@@ -3,6 +3,10 @@
     "title": "Crossly Pattern",
     "type": "object",
     "properties": {
+        "version": {
+            "description": "The version of the embroidery pattern.",
+            "type": "string"
+        },
         "name": {
             "description": "The name of the embroidery pattern.",
             "type": "string"
@@ -150,6 +154,7 @@
         }
     },
     "required": [
+        "version",
         "name",
         "fabric",
         "threads",
